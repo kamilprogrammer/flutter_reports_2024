@@ -33,7 +33,7 @@ class _AdminhomescreenState extends State<Adminhomescreen> {
   Future<void> fetchReports(bool done_reports) async {
     if (done_reports == true) {
       try {
-        final url = Uri.parse("http://192.168.1.155:8000/reports");
+        final url = Uri.parse("https://fastapi-back-rjd-reports.onrender.com/reports");
         final response = await http.get(url);
         final body = response.bodyBytes;
         final json = jsonDecode(utf8.decode(body));
@@ -48,7 +48,7 @@ class _AdminhomescreenState extends State<Adminhomescreen> {
       }
     } else {
       try {
-        final url = Uri.parse("http://192.168.1.155:8000/reports");
+        final url = Uri.parse("https://fastapi-back-rjd-reports.onrender.com/reports");
         final response = await http.get(url);
         final body = response.bodyBytes;
         final json = jsonDecode(utf8.decode(body));
@@ -73,7 +73,7 @@ class _AdminhomescreenState extends State<Adminhomescreen> {
     print("asas");
     final real_index = updated_report['id'];
     final req = await http
-        .delete(Uri.parse("http://192.168.1.155:8000/delete/${real_index}"));
+        .delete(Uri.parse("https://fastapi-back-rjd-reports.onrender.com/delete/${real_index}"));
 
     if (req.statusCode == 200) {
       showDialog(
@@ -111,7 +111,7 @@ class _AdminhomescreenState extends State<Adminhomescreen> {
     print("asas");
     final real_index = updated_report['id'];
     final req = await http
-        .put(Uri.parse("http://192.168.1.155:8000/done/${real_index}"));
+        .put(Uri.parse("https://fastapi-back-rjd-reports.onrender.com/done/${real_index}"));
 
     if (req.statusCode == 200) {
       showDialog(
@@ -149,7 +149,7 @@ class _AdminhomescreenState extends State<Adminhomescreen> {
     print("asas");
     final real_index = updated_report['id'];
     final req = await http
-        .put(Uri.parse("http://192.168.1.155:8000/notyet/${real_index}"));
+        .put(Uri.parse("https://fastapi-back-rjd-reports.onrender.com/notyet/${real_index}"));
 
     if (req.statusCode == 200) {
       showDialog(
