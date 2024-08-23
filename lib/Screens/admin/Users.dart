@@ -109,7 +109,7 @@ class _UsersState extends State<Users> {
                                   print("asas");
                                   final real_index = updated_user['id'];
                                   final req = await http.put(Uri.parse(
-                                      "http://192.168.1.155:8000/admin/${real_index}"));
+                                      "https://fastapi-back-rjd-reports.onrender.com/admin/${real_index}"));
 
                                   if (req.statusCode == 200) {
                                     showDialog(
@@ -162,7 +162,7 @@ class _UsersState extends State<Users> {
                                   print("asas");
                                   final real_index = updated_user['id'];
                                   final req = await http.put(Uri.parse(
-                                      "http://192.168.1.155:8000/not_admin/${real_index}"));
+                                      "https://fastapi-back-rjd-reports.onrender.com/not_admin/${real_index}"));
 
                                   if (req.statusCode == 200) {
                                     showDialog(
@@ -215,7 +215,7 @@ class _UsersState extends State<Users> {
 
                             Delete(int status) async {
                               final response = await http.post(Uri.parse(
-                                  "http://192.168.1.155:8000/user/${user_id.value}"));
+                                  "https://fastapi-back-rjd-reports.onrender.com/user/${user_id.value}"));
 
                               if (response.statusCode == 200) {
                                 final result =
@@ -252,7 +252,7 @@ class _UsersState extends State<Users> {
                                   print("asas");
                                   final real_index = updated_report['id'];
                                   final req = await http.delete(Uri.parse(
-                                      "http://192.168.1.155:8000/del_user/${real_index}"));
+                                      "https://fastapi-back-rjd-reports.onrender.com/del_user/${real_index}"));
 
                                   if (req.statusCode == 200) {
                                     showDialog(
@@ -620,7 +620,7 @@ class _UsersState extends State<Users> {
 
   Future<void> fetchUsers() async {
     try {
-      final url = Uri.parse("http://192.168.1.155:8000/users");
+      final url = Uri.parse("https://fastapi-back-rjd-reports.onrender.com/users");
       final response = await http.get(url);
       final body = response.bodyBytes;
       final json = jsonDecode(utf8.decode(body));
