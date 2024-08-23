@@ -434,7 +434,7 @@ class _LoginScreenState extends State<LoginScreen> {
         section_controller.text.isNotEmpty &&
         pass_controller.text.isNotEmpty) {
       final response = await http.post(
-        Uri.parse("http://192.168.1.155:8000/login"),
+        Uri.parse("https://fastapi-back-rjd-reports.onrender.com/login"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           "Access-Control-Allow-Origin": "*",
