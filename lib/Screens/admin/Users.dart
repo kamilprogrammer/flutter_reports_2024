@@ -69,7 +69,7 @@ class _UsersState extends State<Users> {
                 child: Column(
                   children: [
                     Container(
-                      height: users.length * 70,
+                      height: users.length * 90,
                       child: RefreshIndicator(
                         onRefresh: fetchUsers,
                         color: Colors.blueAccent,
