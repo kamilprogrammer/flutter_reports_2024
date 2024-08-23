@@ -323,7 +323,7 @@ class _ReportScreenState extends State<ReportScreen> {
         desc_controller.text.isNotEmpty &&
         place_controller.text.isNotEmpty) {
       final response = await http.post(
-        Uri.parse("http://192.168.1.155:8000/add"),
+        Uri.parse("https://fastapi-back-rjd-reports.onrender.com/add"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
